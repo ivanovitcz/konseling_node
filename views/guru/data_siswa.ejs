@@ -1,0 +1,432 @@
+<% layout('guru/layouts/master') %>
+<% block('head').append('') %>
+<div class="pcoded-main-container">
+  <div class="pcoded-content">
+      <!-- [ breadcrumb ] Mulai -->
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">Data Siswa</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
+                          <li class="breadcrumb-item"><a href="#!">Data Siswa</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- [ breadcrumb ] Akhir -->
+      <!-- [ Main Content ] Mulai -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <a href="<%=baseURL%>guru/data_siswa/input" class="btn btn-success btn-block"><i class="feather mr-2 icon-plus"></i>Input Siswa</a>
+                        </div>
+                        <div class="col-md-10 text-right mt-2 mt-md-0">
+                          <div class="row justify-content-end">
+                            <div class="col-md-2 text-right">
+                              <button type="button" class="btn btn-primary btn-block">Import CSV</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="card table-card">
+                  <div class="card-header">
+                    <div class="row mb-4">
+                      <div class="col-md-2">
+                        <h5>Data Siswa</h5>
+                      </div>
+                      <div class="col-md-10 text-right">
+                        <div class="row justify-content-end">
+                          <div class="col-md-2">
+                            <select id="cetakkelas" class="form-control" onchange="cetak()">
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                            </select>
+                          </div>
+                          <div class="col-md-2">
+                            <select id="cetakangkatan" class="form-control" onchange="cetak()">
+                              <option value="35">gggg</option>
+                            </select>
+                          </div>
+                          <div class="col-md-2">
+                            <a target="_blank" id="cetak" class="btn btn-primary btn-block" href="#">Cetak</a>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-hover table-borderless">
+                              <thead>
+                                  <tr>
+                                      <th>NIS</th>
+                                      <th>Nama Siswa</th>
+                                      <th>Kelas</th>
+                                      <th>Angkatan</th>
+                                      <th>Detail</th>
+                                      <th>Aksi</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>24214</td>
+                                  <td>dfsdfs</td>
+                                  <td>dfsdfsdfs</td>
+                                  <td>fsdsdfdfs</td>
+                                  <td><button type="button" data-toggle="modal" data-target="#detail_siswa" class="btn btn-sm btn-primary">Detail</button></td>
+                                  
+                                  <div class="modal fade" id="detail_siswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Detail Siswa</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <div class="form-group">
+                                            <label >Angkatan</label>
+                                            <p>fsaafsfsa</p>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label >NIS</label>
+                                            <p>fsaafsafs</p>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label >Nama</label>
+                                            <p>fsafasas</p>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label >Kelas</label>
+                                            <p>fsafasfas</p>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label >Jenis Kelamin</label>
+                                            <p>fafsfas</p>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label >Agama</label>
+                                            <p>dfsfsfds</p>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label >Nama Orang Tua</label>
+                                            <p>dfsdfsfdsdfs</p>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label >Pekerjaan Orang Tua</label>
+                                            <p>afsfsfs</p>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label >Alamat</label>
+                                            <p>dfsfsadfs</p>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label >Bantuan</label>
+                                            <p>dfsdfszafs</p>
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <td>
+                                      <a href="#" class="btn btn-sm btn-success">Riwayat Konseling</a>
+
+                                      <button type="button" data-toggle="modal" data-target="#edit_siswa" class="btn btn-sm btn-primary"><i class="feather icon-edit"></i></button>
+                                      <a href="#" type="button" class="btn btn-sm btn-danger"  onclick="javascript:return confirm('Yakin Hapus Data Siswa?')"><i class="feather icon-trash"></i></a>
+
+                                      <!-- Modal -->
+                                      <div class="modal fade" id="edit_siswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Edit Siswa</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <form action="#" method="POST">
+                                                <div class="form-group">
+                                                  <label for="angkatan">Angkatan</label>
+                                                  <select name="angkatan" class="form-control" id="angkatan" required>
+                                                    <option value="adadad"> sfsaffas</option>
+                                                  </select>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                  <label>NIS</label>
+                                                  <input type="text" class="form-control" name="nis" value="242442" required>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                  <label>Nama</label>
+                                                  <input type="text" class="form-control" name="nama" value="afsafsafs" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                  <label for="kelas">Kelas</label>
+                                                  <select name="kelas" class="form-control" id="kelas" required>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                  </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                  <label>Jenis Kelamin</label>
+                                                  <div class="row">
+                                                    <div class="col-md-6">
+                                                      <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="jk1" name="jk" value="0" >
+                                                        <label class="form-check-label" for="jk1">
+                                                          Laki-laki
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="jk2" name="jk" value="1" >
+                                                        <label class="form-check-label" for="jk2">
+                                                          Perempuan
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                  <label for="agama">Agama</label>
+                                                  <select name="agama" class="form-control" id="agama" required>
+                                                    <option value="Islam" >Islam</option>
+                                                    <option value="Kristen" >Kristen</option>
+                                                    <option value="Katholik" >Katholik</option>
+                                                    <option value="Hindu" >Hindu</option>
+                                                    <option value="Budha" >Budha</option>
+                                                    <option value="Konghucu" >Konghucu</option>
+                                                    <option value="Aliran_Kepercayaan" >Aliran Kepercayaan/Penghayat</option>
+  
+                                                  </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                  <label>No Telepon</label>
+                                                  <input type="text" class="form-control" name="no_telp" value="adadad" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                  <label>Nama Orang Tua</label>
+                                                  <input type="text" class="form-control" name="namaortu" value="adadad" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                  <label>Pekerjaan Orang Tua</label>
+                                                  <input type="text" class="form-control" name="pekerjaanortu" value="daadad" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                  <label for="alamat">Alamat</label>
+                                                  <textarea name="alamat" class="form-control" id="alamat" rows="3" required>adadad</textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                  <label>Bantuan</label>
+                                                  <input type="text" class="form-control" name="bantuan" value="adadad" required>
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                              <button type="submit" name="edit" class="btn btn-primary">Save</button>
+                                              </form>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                  </td>
+                                </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- [ Main Content ] Akhir -->
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-xl" id="input_siswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Input Siswa</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="#" method="POST">
+
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="mb-4" >Data Siswa</h5>
+            <div class="form-group">
+              <label for="angkatan">Angkatan</label>
+              <select name="angkatan" class="form-control" id="angkatan" required>
+                <option value="0">#</option>
+              </select>
+            </div>
+    
+    
+            <div class="form-group">
+              <label>NIS</label>
+              <input type="text" class="form-control" name="nis" required>
+            </div>
+    
+    
+            <div class="form-group">
+              <label>Nama</label>
+              <input type="text" class="form-control" name="nama" required>
+            </div>
+    
+            <div class="form-group">
+              <label for="kelas">Kelas</label>
+              <select name="kelas" class="form-control" id="kelas" required>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+            </div>
+    
+            <div class="form-group">
+              <label>Jenis Kelamin</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="jk1" name="jk" value="0" checked>
+                    <label class="form-check-label" for="jk1">
+                      Laki-laki
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="jk2" name="jk" value="1">
+                    <label class="form-check-label" for="jk2">
+                      Perempuan
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="form-group">
+              <label for="agama">Agama</label>
+              <select name="agama" class="form-control" id="agama" required>
+                <option value="Islam">Islam</option>
+                <option value="Kristen">Kristen</option>
+                <option value="Katholik">Katholik</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Budha">Budha</option>
+                <option value="Konghucu">Konghucu</option>
+                <option value="Aliran Kepercayaan">Aliran Kepercayaan/Penghayat</option>
+    
+              </select>
+            </div>
+    
+            <div class="form-group">
+              <label>No Telepon</label>
+              <input type="text" class="form-control" name="no_telp" required>
+            </div>
+
+            <div class="form-group">
+              <label>Bantuan</label>
+              <input type="text" class="form-control" name="bantuan" required>
+            </div>
+
+            <div class="form-group">
+              <label>Alamat Siswa</label>
+              <textarea name="alamat_siswa" class="form-control" rows="3" required></textarea>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <h5 class="mb-4" >Data Orang Tua/Wali</h5>
+            <div class="form-group">
+              <label>Nama Orang Tua/Wali</label>
+              <input type="text" class="form-control" name="namaortu" required>
+            </div>
+
+            <div class="form-group">
+              <label>Pekerjaan Orang Tua/Wali</label>
+              <input type="text" class="form-control" name="pekerjaanortu" required>
+            </div>
+
+            
+
+            <div class="form-group">
+              <label>Alamat Orang Tua/Wali</label>
+              <textarea name="alamat_wali" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>No Telepon Orang Tua/Wali</label>
+              <input type="text" class="form-control" name="no_telp_wali" required>
+            </div>
+
+            
+          </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" name="create" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<% block('footer').append('') %>
+
+<script>
+var kelas = document.getElementById('cetakkelas').value;
+var angkatan = document.getElementById('cetakangkatan').value;
+document.getElementById("cetak").href="./cetak.php?angkatan="+angkatan+"&kelas="+kelas;
+
+function cetak() {
+  kelas = document.getElementById('cetakkelas').value;
+  angkatan = document.getElementById('cetakangkatan').value;
+  document.getElementById("cetak").href="./cetak.php?angkatan="+angkatan+"&kelas="+kelas;
+}
+</script>

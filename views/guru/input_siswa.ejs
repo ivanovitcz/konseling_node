@@ -1,0 +1,156 @@
+<% layout('guru/layouts/master') %>
+<% block('head').append('') %>
+<div class="pcoded-main-container">
+  <div class="pcoded-content">
+      <!-- [ breadcrumb ] Mulai -->
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">Data Siswa</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
+                          <li class="breadcrumb-item"><a href="#">Data Siswa</a></li>
+                          <li class="breadcrumb-item"><a href="#!">Input Siswa</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- [ breadcrumb ] Akhir -->
+      <!-- [ Main Content ] Mulai -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="row justify-content-end align-items-center">
+                        <div class="col-md-10">
+                          <h5>Formulir Data Diri Siswa</h5>
+                        </div>
+                        <div class="col-md-2 text-right">
+                          <button type="submit" class="btn btn-primary btn-block"><i class="feather mr-2 icon-plus"></i>Input Siswa</button>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="card">
+                
+                <div class="card-body px-4">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h5 class="mb-4" >Data Siswa</h5>
+                      <div class="form-group">
+                        <label for="angkatan">Angkatan</label>
+                        <select name="angkatan" class="form-control" id="angkatan" required>
+                          <option value="0">#</option>
+                        </select>
+                      </div>
+              
+              
+                      <div class="form-group">
+                        <label>NIS</label>
+                        <input type="text" class="form-control" name="nis" required>
+                      </div>
+              
+              
+                      <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" class="form-control" name="nama" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-control-label">Gambar</label>
+                        <input type="file" id="image-upload" name="image" class="form-control-file form-control form-control-alternative" accept="image/*">
+                      </div>
+                      <div class="form-group text-center">
+                        <img src="#" id="image-preview" class="img-fluid rounded shadow" style="max-height: 300px" alt="">
+                      </div>
+              
+              
+                      <div class="form-group">
+                        <label>Jenis Kelamin</label>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" id="jk1" name="jk" value="0" checked>
+                              <label class="form-check-label" for="jk1">
+                                Laki-laki
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" id="jk2" name="jk" value="1">
+                              <label class="form-check-label" for="jk2">
+                                Perempuan
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="form-group">
+                        <label for="agama">Agama</label>
+                        <select name="agama" class="form-control" id="agama" required>
+                          <option value="Islam">Islam</option>
+                          <option value="Kristen">Kristen</option>
+                          <option value="Katholik">Katholik</option>
+                          <option value="Hindu">Hindu</option>
+                          <option value="Budha">Budha</option>
+                          <option value="Konghucu">Konghucu</option>
+                          <option value="Aliran Kepercayaan">Aliran Kepercayaan/Penghayat</option>
+              
+                        </select>
+                      </div>
+              
+                      <div class="form-group">
+                        <label>No Telepon</label>
+                        <input type="text" class="form-control" name="no_telp" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label>Alamat Siswa</label>
+                        <textarea name="alamat_siswa" class="form-control" rows="3" required></textarea>
+                      </div>
+          
+                    </div>
+          
+                    <div class="col-md-6">
+                      <h5 class="mb-4" >Data Orang Tua/Wali</h5>
+                      <div class="form-group">
+                        <label>Nama Orang Tua/Wali</label>
+                        <input type="text" class="form-control" name="namaortu" required>
+                      </div>
+          
+                      <div class="form-group">
+                        <label>Pekerjaan Orang Tua/Wali</label>
+                        <input type="text" class="form-control" name="pekerjaanortu" required>
+                      </div>
+          
+                      
+          
+                      <div class="form-group">
+                        <label>Alamat Orang Tua/Wali</label>
+                        <textarea name="alamat_wali" class="form-control" rows="3" required></textarea>
+                      </div>
+          
+                      <div class="form-group">
+                        <label>No Telepon Orang Tua/Wali</label>
+                        <input type="text" class="form-control" name="no_telp_wali" required>
+                      </div>
+          
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <!-- [ Main Content ] Akhir -->
+  </div>
+</div>
+
+
+<% block('footer').append('') %>

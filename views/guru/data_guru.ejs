@@ -1,0 +1,282 @@
+<% layout('guru/layouts/master') %>
+<% block('head').append('') %>
+<div class="pcoded-main-container">
+  <div class="pcoded-content">
+      <!-- [ breadcrumb ] Mulai -->
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">Data Guru BK</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
+                          <li class="breadcrumb-item"><a href="#!">Data Guru BK</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- [ breadcrumb ] Akhir -->
+      <!-- [ Main Content ] Mulai -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <button type="button" data-toggle="modal" data-target="#input_gurubk" class="btn btn-success btn-block"><i class="feather mr-2 icon-plus"></i>Input Guru BK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card table-card">
+                  <div class="card-header">
+                      <h5 class="mb-4">Data Guru BK</h5>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-hover table-borderless">
+                          <thead>
+                              <tr>
+                                  <th>NIP</th>
+                                  <th>Nama Guru BK</th>
+                                  <th>Status</th>
+                                  <th>Detail</th>
+                                  <th>Aksi</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>2134235235</td>
+                              <td>dfsdfsdfsdfs</td>
+                              <td><label class="badge badge-success">A</label></td>
+                              <td><button type="button" data-toggle="modal" data-target="#detail_gurubk" class="btn btn-sm btn-primary">Detail</button></td>
+                              
+                              <div class="modal fade" id="detail_gurubk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Detail Guru BK</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="form-group">
+                                        <label >NIP</label>
+                                        <p>24422424</p>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label >Nama</label>
+                                        <p>adsadsadsads</p>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label >Agama</label>
+                                        <p>adsadsadsds</p>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label >No Telepon</label>
+                                        <p>214214124124</p>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label >Alamat</label>
+                                        <p>sadfasfasf</p>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label >Status</label>
+                                        <p>sdfsfdfsdfs</label></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <td>
+                                <button type="button" data-toggle="modal" data-target="#edit_gurubk" class="btn btn-sm btn-primary"><i class="feather icon-edit"></i></button>
+                                
+                                <a href="#" type="button" class="btn btn-sm btn-danger"  onclick="javascript:return confirm('Yakin Hapus Data Guru BK?')"><i class="feather icon-trash"></i></a>
+                                <!-- Modal -->
+                                <div class="modal fade" id="edit_gurubk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Edit Guru BK</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form action="#" method="POST">
+                                          <div class="form-group">
+                                            <label>NIP</label>
+                                            <input type="text" class="form-control" name="nip" value="35253235" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label>Nama</label>
+                                            <input type="text" class="form-control" name="nama" value="dfsdfsdfs" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="agama">Agama</label>
+                                            <select name="agama" class="form-control" id="agama" required>
+                                              <option value="Islam" >Islam</option>
+                                              <option value="Kristen" >Kristen</option>
+                                              <option value="Katholik" >Katholik</option>
+                                              <option value="Hindu" >Hindu</option>
+                                              <option value="Budha" >Budha</option>
+                                              <option value="Konghucu" >Konghucu</option>
+                                              <option value="Aliran_Kepercayaan" >Aliran Kepercayaan/Penghayat</option>
+
+                                            </select>
+                                          </div>
+                                          <div class="form-group">
+                                            <label>No Telepon</label>
+                                            <input type="text" class="form-control" name="notelp" value="adsasdads" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="alamat">Alamat</label>
+                                            <textarea name="alamat" class="form-control" id="alamat" rows="3" required>adsadsads</textarea>
+                                          </div>
+                                          <div class="form-group">
+                                            <label>Status</label>
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="radio" id="status1" name="status" value="0" >
+                                                  <label class="form-check-label" for="status1">
+                                                    Tidak Tetap
+                                                  </label>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="radio" id="status2" name="status" value="1" >
+                                                  <label class="form-check-label" for="status2">
+                                                    Tetap
+                                                  </label>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" name="edit" class="btn btn-primary">Save</button>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- [ Main Content ] Akhir -->
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="input_gurubk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Input Guru BK</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="#" method="POST">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" class="form-control" name="username" required>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="form-group">
+              <label>NIP</label>
+              <input type="text" class="form-control" name="nip" required>
+            </div>
+            <div class="form-group">
+              <label>Nama</label>
+              <input type="text" class="form-control" name="nama" required>
+            </div>
+            <div class="form-group">
+              <label for="agama">Agama</label>
+              <select name="agama" class="form-control" id="agama" required>
+                <option value="Islam">Islam</option>
+                <option value="Kristen">Kristen</option>
+                <option value="Katholik">Katholik</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Budha">Budha</option>
+                <option value="Konghucu">Konghucu</option>
+                <option value="Aliran_Kepercayaan">Aliran Kepercayaan/Penghayat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>No Telepon</label>
+              <input type="text" class="form-control" name="notelp" required>
+            </div>
+            <div class="form-group">
+              <label for="alamat">Alamat</label>
+              <textarea name="alamat" class="form-control" id="alamat" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label>Status</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="status1" name="status" value="0">
+                    <label class="form-check-label" for="status1">
+                      Tidak Tetap
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="status2" name="status" value="1" checked>
+                    <label class="form-check-label" for="status2">
+                      Tetap
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" name="create" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<% block('footer').append('') %>
+
+
+
