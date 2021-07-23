@@ -1,0 +1,184 @@
+<% layout('guru/layouts/master') %>
+<% block('head').append('') %>
+<div class="pcoded-main-container">
+  <div class="pcoded-content">
+      <!-- [ breadcrumb ] Mulai -->
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">Konseling</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
+                          <li class="breadcrumb-item"><a href="#!">Konseling</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- [ breadcrumb ] Akhir -->
+      <!-- [ Main Content ] Mulai -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-body">
+                      <button type="button" data-toggle="modal" data-target="#input_konseling" class="btn btn-success"><i class="feather mr-2 icon-plus"></i>Input Konseling</button>
+                  </div>
+              </div>
+              <div class="card table-card">
+                  <div class="card-header">
+                    <h5 class="mb-4">Data Konseling</h5>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-hover table-borderless">
+                              <thead>
+                                  <tr>
+                                      <th>No</th>
+                                      <th>Nama Siswa</th>
+                                      <th>Nama Guru BK</th>
+                                      <th>Tanggal</th>
+                                      <th>Detail</th>
+                                      <th>Aksi</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>1</td>
+                                      <td>affa</td>
+                                      <td>fff</td>
+                                      <td>sfasfafs</td>
+                                      <td><button type="button" data-toggle="modal" data-target="#detail_konseling" class="btn btn-sm btn-primary">Detail</button></td>
+                                      
+                                      <div class="modal fade" id="detail_konseling" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Detail Konseling</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <div class="form-group">
+                                                <label for="nis">NIS</label>
+                                                <p>3452553</p>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="nis">Nama Siswa</label>
+                                                <p>sfafsa</p>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="nis">NIP</label>
+                                                <p>4342234</p>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="nis">Nama Guru BK</label>
+                                                <p>adadda</p>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="tanggal">tanggal</label>
+                                                <p>assffsa</p>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="keterangan">Keterangan</label>
+                                                <p>afsfdsfdsfs</p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <td>
+                                          <button type="button" data-toggle="modal" data-target="#edit_konseling" class="btn btn-sm btn-primary"><i class="feather icon-edit"></i></button>
+                                          <a href="#" type="button" class="btn btn-sm btn-danger"  onclick="javascript:return confirm('Yakin Hapus Data Konseling?')"><i class="feather icon-trash"></i></a>
+
+                                          <!-- Modal -->
+                                          <div class="modal fade" id="edit_konseling" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title" id="exampleModalLabel">Edit Konseling</h5>
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <form action="# method="POST">
+                                                    <div class="form-group">
+                                                      <label for="nis">Nama Siswa</label>
+                                                      <select name="nis" class="form-control" id="nis" requiered>
+                                                        <option value="24">dfsdfsdgs</option>
+                                                      </select>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                      <label for="keterangan">Keterangan</label>
+                                                      <textarea name="keterangan" class="form-control" id="keterangan" rows="3" required>fsafsfs</textarea>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                  <button type="submit" name="edit" class="btn btn-primary">Save</button>
+                                                  </form>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- [ Main Content ] Akhir -->
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="input_konseling" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Input Konseling</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="./konseling/query.php" method="POST">
+        <div class="form-group">
+          <label for="nis">Nama Siswa</label>
+          <select name="nis" class="form-control" id="nis" required>
+            <option value="666">adad</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="keterangan">Keterangan</label>
+          <textarea name="keterangan" class="form-control" id="keterangan" rows="3" required></textarea>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" name="create" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<% block('footer').append('') %>
