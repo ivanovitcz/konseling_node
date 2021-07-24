@@ -25,7 +25,17 @@ const bcrypt = require('bcrypt');
 const salt = bcrypt.genSaltSync(10);
 
 router.get('/', (req, res) => {
-  res.render('guru/data_guru');
+  connect.query('SELECT * FROM guru WHERE jabatan_id = ?', ['1'], (err, rows) => {
+    if(!err) {
+      console.log(rows.length);
+      res.render('guru/data_guru', {
+        rows: rows
+      });
+    } else {
+      res.send(err);
+    }
+  });
+  
 });
 
 router.get('/input', (req, res) => {
@@ -72,7 +82,7 @@ router.post('/input', upload.single('image'), (req, res) => {
         };
         connect.query('INSERT INTO guru SET ?', form_data, (err, result) => {
           if(!err) {
-            res.send('success');
+            res.redirect('/guru/data-guru/');
           } else {
             res.send(err);
           }
